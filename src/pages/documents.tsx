@@ -57,7 +57,7 @@ export default withPageAuthRequired(() => {
     <Flex gap={4} mx="auto" w="95%" maxW="1400px" direction="column" mb={4}>
       <Flex direction="column" mt={8}>
         <Text fontSize="3xl" fontWeight="semibold">
-          Documents
+          BROSKI
         </Text>
         <Flex justify="space-between" w="full" align="flex-end" gap={4}>
           <InputGroup maxW="320px">

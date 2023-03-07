@@ -1,0 +1,116 @@
+[
+  {
+    "name": "SOP - General w/ COVID",
+    "createdBy": { "connect": { "email": "con.bbrock@moleculardesigns.com" } },
+    "tags": {
+      "connect": [
+        { "name": "BioRad" },
+        { "name": "Plate" },
+        { "name": "With COVID" }
+      ]
+    }
+  },
+  {
+    "name": "SOP - General w/o COVID",
+    "createdBy": { "connect": { "email": "con.bbrock@moleculardesigns.com" } },
+    "tags": {
+      "connect": [
+        { "name": "BioRad" },
+        { "name": "Plate" },
+        { "name": "Without COVID" }
+      ]
+    }
+  },
+  {
+    "name": "SOP - General w/ COVID w/ Quant",
+    "createdBy": { "connect": { "email": "con.bbrock@moleculardesigns.com" } },
+    "tags": {
+      "connect": [
+        { "name": "QuantStudio" },
+        { "name": "Plate" },
+        { "name": "With COVID" }
+      ]
+    }
+  },
+  {
+    "name": "SOP - General w/o COVID w/ Quant",
+    "createdBy": { "connect": { "email": "con.bbrock@moleculardesigns.com" } },
+    "tags": {
+      "connect": [
+        { "name": "QuantStudio" },
+        { "name": "Plate" },
+        { "name": "Without COVID" }
+      ]
+    }
+  },
+  {
+    "name": "SOP - Training - 96 well",
+    "createdBy": { "connect": { "email": "con.bbrock@moleculardesigns.com" } },
+    "tags": {
+      "connect": [{ "name": "96 well" }, { "name": "Large Tube" }]
+    }
+  },
+  {
+    "name": "SOP - Training - 384 well",
+    "createdBy": { "connect": { "email": "distributor@example.com" } },
+    "users": {
+      "connect": [
+        { "email": "pol@example.com" },
+        { "email": "referenceLab@example.com" }
+      ]
+    },
+    "tags": {
+      "connect": [{ "name": "384 well" }, { "name": "Large Tube" }]
+    }
+  },
+  {
+    "name": "Validation - 96 well",
+    "createdBy": { "connect": { "email": "con.bbrock@moleculardesigns.com" } },
+    "tags": {
+      "connect": [
+        { "name": "QuantStudio" },
+        { "name": "96 well" },
+        { "name": "With COVID" }
+      ]
+    }
+  },
+  {
+    "name": "Validation - 384 well",
+    "createdBy": { "connect": { "email": "con.bbrock@moleculardesigns.com" } },
+    "users": {
+      "connect": [
+        { "email": "pol@example.com" },
+        { "email": "referenceLab@example.com" }
+      ]
+    },
+    "tags": {
+      "connect": [
+        { "name": "QuantStudio" },
+        { "name": "384 well" },
+        { "name": "With COVID" }
+      ]
+    }
+  },
+  {
+    "name": "Custom POL Filter",
+    "createdBy": { "connect": { "email": "pol@example.com" } },
+    "tags": {
+      "connect": [
+        { "name": "QuantStudio" },
+        { "name": "384 well" },
+        { "name": "With COVID" }
+      ]
+    }
+  },
+  {
+    "name": "Custom Distributor Filter (shared w/ clients)",
+    "createdBy": { "connect": { "email": "distributor@example.com" } },
+    "tags": {
+      "connect": [
+        { "name": "QuantStudio" },
+        { "name": "96 well" },
+        { "name": "With COVID" }
+      ]
+    }
+  }
+]

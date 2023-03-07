@@ -1,0 +1,60 @@
+[
+  {
+    "url": "/path/to/s3/file/template/v1",
+    "type": "template",
+    "version": 1,
+    "uploadedBy": {
+      "connect": { "email": "distributor@example.com" }
+    },
+    "document": {
+      "connect": { "name": "Validation Procedure Extractionless" }
+    }
+  },
+  {
+    "url": "/path/to/s3/file/template/v1",
+    "type": "final",
+    "version": 1,
+    "uploadedBy": {
+      "connect": { "email": "referenceLab@example.com" }
+    },
+    "document": {
+      "connect": { "name": "Validation Procedure Extractionless" }
+    }
+  },
+  {
+    "url": "/path/to/s3/file/template/v1",
+    "type": "template",
+    "version": 1,
+    "uploadedBy": {
+      "connect": { "email": "con.bbrock@moleculardesigns.com" }
+    },
+    "document": { "connect": { "name": "Data Review on BioRad" } }
+  },
+  {
+    "url": "/path/to/s3/file/template/v2",
+    "type": "template",
+    "version": 2,
+    "uploadedBy": {
+      "connect": { "email": "con.bbrock@moleculardesigns.com" }
+    },
+    "document": { "connect": { "name": "Data Review on BioRad" } }
+  },
+  {
+    "url": "/path/to/s3/file/final/v2",
+    "type": "final",
+    "version": 2,
+    "uploadedBy": {
+      "connect": { "email": "martysampsonmd@gmail.com" }
+    },
+    "document": { "connect": { "name": "Data Review on BioRad" } }
+  },
+  {
+    "url": "/path/to/s3/file/template/v1",
+    "type": "template",
+    "version": 1,
+    "uploadedBy": {
+      "connect": { "email": "martysampsonmd@gmail.com" }
+    },
+    "document": { "connect": { "name": "Plating Molecular Samples" } }
+  }
+]

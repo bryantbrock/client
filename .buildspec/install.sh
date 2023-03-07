@@ -1,0 +1,9 @@
+#!/bin/bash
+echo Account $AWS_ACCOUNT_ID 
+echo Base $CODEBUILD_WEBHOOK_BASE_REF
+echo Event $CODEBUILD_WEBHOOK_EVENT  
+echo Pull $CODEBUILD_SOURCE_VERSION
+echo Version $BUILD_BASE_VERSION
+echo Extension $BUILD_EXTENSION
+echo Build $BUILD_VERSION
+echo Latest $TAG_LATEST

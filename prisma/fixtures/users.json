@@ -1,0 +1,33 @@
+[
+  {
+    "email": "martysampsonmd@gmail.com",
+    "name": "Marty Sampson",
+    "role": { "connect": { "name": "admin" } }
+  },
+  {
+    "email": "luisquiiroga96@gmail.com",
+    "name": "Luis Quiroga",
+    "role": { "connect": { "name": "admin" } }
+  },
+  {
+    "email": "con.bbrock@moleculardesigns.com",
+    "name": "Bryant Brock",
+    "role": { "connect": { "name": "admin" } }
+  },
+  {
+    "email": "distributor@example.com",
+    "name": "Distributor",
+    "permissions": "*:validate",
+    "role": { "connect": { "name": "distributor" } }
+  },
+  {
+    "email": "pol@example.com",
+    "name": "POL",
+    "role": { "connect": { "name": "pol" } }
+  },
+  {
+    "email": "referenceLab@example.com",
+    "name": "Reference Lab",
+    "role": { "connect": { "name": "reference_lab" } }
+  }
+]

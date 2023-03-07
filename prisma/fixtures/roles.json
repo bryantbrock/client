@@ -1,0 +1,10 @@
+[
+  { "name": "admin", "permissions": "*:*" },
+  { "name": "internal", "permissions": "read:*" },
+  {
+    "name": "distributor",
+    "permissions": "*:template_documents,*:clients,*:settings,*:order"
+  },
+  { "name": "pol", "permissions": "*:final_documents,read:order" },
+  { "name": "reference_lab", "permissions": "*:final_documents,read:order" }
+]

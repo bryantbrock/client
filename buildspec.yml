@@ -1,0 +1,33 @@
+version: 0.2
+env:
+  shell: bash
+  parameter-store:
+    DOCKER_LOGIN_USERNAME: /CodeBuild/dockerLoginUsername
+    DOCKER_LOGIN_PASSWORD: /CodeBuild/dockerLoginPassword
+phases:
+  install:
+    commands:
+      - BUILD_BASE_VERSION=`cat package.json | jq -r .version`  
+      - BUILD_EXTENSION=`echo $CODEBUILD_SOURCE_VERSION | sed 's/\//\./g'` 
+      - |
+        if [ "$CODEBUILD_WEBHOOK_EVENT" != "PULL_REQUEST_MERGED" ] ; then
+            echo "Set PR Build"
+            BUILD_VERSION=${BUILD_BASE_VERSION}-${BUILD_EXTENSION}
+            TAG_LATEST=false
+        else
+            echo "Set Merge Update"
+            BUILD_VERSION=${BUILD_BASE_VERSION}  
+            TAG_LATEST=true
+        fi
+      - chmod +x .buildspec/*.sh
+      - ./.buildspec/install.sh
+  pre_build:
+    commands:
+      - ./.buildspec/pre_build.sh
+  build:
+    commands:
+      - ./.buildspec/build.sh
+ 
+  post_build:
+    commands:
+      - ./.buildspec/post_build.sh

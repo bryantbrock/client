@@ -1,0 +1,113 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextIndex", "fullTextSearch"]
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+// If `distributorId`, user is a client (end user)
+// If no `distributorId`, user is a either a distributor or internal - role determines
+model User {
+  id                  Int               @id @default(autoincrement())
+  createdAt           DateTime          @default(now())
+  deletedAt           DateTime?
+  email               String            @unique
+  name                String?
+  auth0Id             String?
+  logo                String?
+  primaryColor        String?
+  secondaryColor      String?
+  permissions         String?           // Overrides role permissions
+  role                Role              @relation(fields: [roleName], references: [name])
+  roleName            String
+  distributorId       Int?
+  distributor         User?             @relation("DistributorClients", fields: [distributorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  clients             User[]            @relation("DistributorClients")
+  documentVersions    DocumentVersion[]
+  defaultTags         Tag[]             @relation("TagsDefaultForUser")
+  allowedTags         Tag[]             @relation("TagsAllowedForUser")
+  disabledTags        Tag[]             @relation("TagsDisabledForUser")
+  quickFilters        QuickFilter[]     @relation("UserQuickFilters")
+  createdQuickFiltes  QuickFilter[]
+  logs                Log[]
+}
+
+model Role {
+  id            Int             @id @default(autoincrement())
+  createdAt     DateTime        @default(now())
+  deletedAt     DateTime?
+  name          String          @unique
+  description   String?
+  permissions   String
+  users         User[]
+}
+
+model Document {
+  id            Int         @id @default(autoincrement())
+  createdAt     DateTime    @default(now())
+  deletedAt     DateTime?
+  name          String      @unique
+  description   String?
+  versions      DocumentVersion[]
+  tags          Tag[]
+}
+
+model DocumentVersion {
+  id            Int         @id @default(autoincrement())
+  createdAt     DateTime    @default(now())
+  deletedAt     DateTime?
+  url           String
+  version       Int         @default(1)
+  type          String      @default("template") // TS Enum - SQL Server doesnt't support prisma enums
+  uploadedById  Int
+  uploadedBy    User        @relation(fields: [uploadedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  documentId    Int
+  document      Document    @relation(fields: [documentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Tag {
+  id            Int           @id @default(autoincrement())
+  createdAt     DateTime      @default(now())
+  deletedAt     DateTime?
+  name          String        @db.VarChar(100) @unique
+  groupName     String        @db.VarChar(100)
+  group         TagGroup      @relation(fields: [groupName], references: [name])
+  documents     Document[]
+  quickfilter   QuickFilter[]
+  defaultFor    User[]        @relation("TagsDefaultForUser")
+  allowedFor    User[]        @relation("TagsAllowedForUser")
+  disabledFor   User[]        @relation("TagsDisabledForUser")
+}
+
+model TagGroup {
+  id        Int     @id @default(autoincrement())
+  name      String  @db.VarChar(100) @unique
+  tags      Tag[]
+}
+
+model QuickFilter {
+  id          Int         @id @default(autoincrement())
+  createdAt   DateTime    @default(now())
+  deletedAt   DateTime?
+  createdById Int
+  createdBy   User        @relation(fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  name        String      @db.VarChar(100)
+  users       User[]      @relation("UserQuickFilters")
+  tags        Tag[]
+}
+
+model Log {
+  id            Int       @id @default(autoincrement())
+  createdAt     DateTime  @default(now())
+  module        String    // TS Enum - SQL Server doesnt't support prisma enums
+  event         String    // TS Enum - SQL Server doesnt't support prisma enums
+  resourceType  String?   // TS Enum - SQL Server doesnt't support prisma enums
+  resourceId    String?
+  userId        Int
+  user          User      @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  details       String?
+  object_id     Int?
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Data Review on BioRad",
+    "tags": {
+      "connect": [
+        { "name": "SOP - General" },
+        { "name": "BioRad" },
+        { "name": "With COVID" }
+      ]
+    }
+  },
+  {
+    "name": "Validation Procedure Extractionless",
+    "tags": {
+      "connect": [
+        { "name": "Validation" },
+        { "name": "QuantStudio" },
+        { "name": "QS3 & QS5" },
+        { "name": "96 well" },
+        { "name": "With COVID" }
+      ]
+    }
+  },
+  {
+    "name": "Plating Molecular Samples",
+    "tags": {
+      "connect": [
+        { "name": "Validation" },
+        { "name": "QuantStudio" },
+        { "name": "QS3 & QS5" },
+        { "name": "384 well" },
+        { "name": "Without COVID" }
+      ]
+    }
+  },
+  {
+    "name": "Product Documentation",
+    "tags": {
+      "connect": [
+        { "name": "QuantStudio" },
+        { "name": "QS3 & QS5" },
+        { "name": "96 well" },
+        { "name": "Without COVID" },
+        { "name": "Excel" }
+      ]
+    }
+  }
+]

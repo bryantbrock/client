@@ -1,0 +1,81 @@
+[
+  {
+    "name": "SOP - Daily Assays",
+    "group": { "connect": { "name": "Document Type" } }
+  },
+  {
+    "name": "SOP - General",
+    "group": { "connect": { "name": "Document Type" } }
+  },
+  {
+    "name": "SOP - Training",
+    "group": { "connect": { "name": "Document Type" } }
+  },
+  {
+    "name": "Validation",
+    "group": { "connect": { "name": "Document Type" } }
+  },
+  { "name": "BioRad", "group": { "connect": { "name": "Machine" } } },
+  {
+    "name": "QuantStudio",
+    "group": {
+      "connect": { "name": "Machine" }
+    },
+    "allowedFor": {
+      "connect": [
+        { "email": "pol@example.com" },
+        { "email": "distributor@example.com" }
+      ]
+    }
+  },
+  {
+    "name": "BioRad All",
+    "group": { "connect": { "name": "Model" } }
+  },
+  {
+    "name": "QS3 & QS5",
+    "group": { "connect": { "name": "Model" } }
+  },
+  { "name": "QS6", "group": { "connect": { "name": "Model" } } },
+  { "name": "QS7", "group": { "connect": { "name": "Model" } } },
+  {
+    "name": "QS12",
+    "group": { "connect": { "name": "Model" } },
+    "disabledFor": { "connect": [{ "email": "referenceLab@example.com" }] }
+  },
+  {
+    "name": "96 well",
+    "group": { "connect": { "name": "Size" } },
+    "allowedFor": { "connect": [{ "email": "distributor@example.com" }] }
+  },
+  {
+    "name": "384 well",
+    "group": { "connect": { "name": "Size" } },
+    "allowedFor": {
+      "connect": [{ "email": "pol@example.com" }]
+    }
+  },
+  {
+    "name": "With COVID",
+    "group": { "connect": { "name": "COVID" } },
+    "allowedFor": {
+      "connect": [
+        { "email": "pol@example.com" },
+        { "email": "distributor@example.com" }
+      ]
+    },
+    "defaultFor": { "connect": [{ "email": "pol@example.com" }] },
+    "disabledFor": { "connect": [{ "email": "referenceLab@example.com" }] }
+  },
+  { "name": "Without COVID", "group": { "connect": { "name": "COVID" } } },
+  { "name": "Word", "group": { "connect": { "name": "File Type" } } },
+  { "name": "Excel", "group": { "connect": { "name": "File Type" } } },
+  {
+    "name": "Plate",
+    "group": { "connect": { "name": "Material" } }
+  },
+  {
+    "name": "Large Tube",
+    "group": { "connect": { "name": "Material" } }
+  }
+]

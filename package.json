@@ -1,0 +1,62 @@
+{
+  "private": true,
+  "version": "0.0.10",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "db:seed": "npx prisma db seed",
+    "db:reset": "npx prisma migrate reset && npx prisma generate",
+    "db:migrate": "npx prisma migrate",
+    "db:update": "npx prisma db push",
+    "db:studio": "npx prisma studio",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
+  "dependencies": {
+    "@auth0/nextjs-auth0": "^2.2.1",
+    "@chakra-ui/icons": "^2.0.17",
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.9",
+    "@mui/material": "^5.11.10",
+    "@prisma/client": "^4.8.1",
+    "@tanstack/react-table": "^8.7.9",
+    "auth0": "^3.0.1",
+    "aws-sdk": "^2",
+    "framer-motion": "^10.0.1",
+    "lodash": "^4.17.21",
+    "next": "^13.2.1",
+    "next-swagger-doc": "^0.3.6",
+    "ramda": "^0.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-hook-form": "^7.43.3",
+    "react-query": "^3.39.3",
+    "swagger-ui-react": "^4.15.5",
+    "usehooks-ts": "^2.9.1",
+    "zustand": "^4.3.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/auth0": "^2.35.10",
+    "@types/swagger-ui-react": "^4.11.0",
+    "babel-loader": "^8.3.0",
+    "eslint": "8.34.0",
+    "eslint-config-next": "^13.2.1",
+    "eslint-plugin-storybook": "^0.6.11",
+    "jest": "^29.4.3",
+    "jest-environment-jsdom": "^29.4.3",
+    "prisma": "^4.6.0",
+    "typescript": "4.9.4"
+  }
+}
